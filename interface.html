@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="view.ico" />
+    <title>Calculatrice</title>
+</head>
+<body>
+    <div id="background">
+        <div id="reponse">
+            <input type="text" value="" id="formule" />
+            <div id="result"></div>
+        </div>
+        <div id="block1">
+            <div id="carro">
+                <button  onclick="erase();">C</button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch('/');">/</button>
+            </div>
+            <div id="carro">
+                <button onclick="click_touch('*');">X</button>
+            </div>
+            <div id="carro">
+                <button  onclick="delet();"> <- </button>
+            </div>
+        </div>
+        <div id="block1">
+            <div id="carro">
+                <button  onclick="click_touch(7);"> 7 </button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch(8);">8</button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch(9);">9</button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch('+');">+</button>
+            </div>
+        </div>
+        <div id="block1">
+            <div id="carro">
+                <button  onclick="click_touch(4);">4</button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch(5);">5</button>
+            </div>
+            <div id="carro">
+                <button onclick="click_touch(6);">6</button>
+            </div>
+            <div id="carro">
+                <button  onclick="click_touch('-');">-</button>
+            </div>
+        </div>
+        <div id="end">
+            <div id="left">
+                <div id="block2">
+                    <div id="carro4">
+                        <button onclick="click_touch(1);">1</button>
+                    </div>
+                    <div id="carro4">
+                        <button  onclick="click_touch(2);">2</button>
+                    </div>
+                    <div id="carro4">
+                        <button  onclick="click_touch(3);">3</button>
+                    </div>
+                </div>
+                <div id="block2">
+                    <div id="carro1">
+                        <button class="carro1" onclick="click_touch(0);">0</button>
+                    </div>
+                    <div id="carro">
+                        <button  onclick="click_touch('.');">,</button>
+                    </div>
+                </div>
+            </div>
+            <div id="rigth">
+                <div id="carro3">
+                    <button class="rigth"  onclick="egal();">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var operators= ['+','-','*','/','.'];
+        var formule_el = document.getElementById("formule");
+        var result_el = document.getElementById("result");
+
+        
+        function click_touch(value){		
+            // si on a déjà fait un calcul précédemment
+            if (result_el.textContent.length > 0)
+            {
+                // on vide la formule
+                formule_el.value = "";
+
+                // si on a cliqué sur un operateur
+                if(operators.indexOf(value) != -1){
+                    // On concate le résultat précédent
+                    formule_el.value = result_el.textContent;
+                }
+                
+                // On vide le résultat
+                result_el.textContent = "";
+            }
+
+            // On concate le chiffre/opérateur
+            formule_el.value += value; 
+        }
+        
+        
+        function egal(){
+            var chiffre = formule_el.value;
+            // Si la formule se termine par un opérateur
+            if(operators.indexOf(chiffre.charAt(chiffre.length-1 )) !=-1 ){
+                //Calculer le résultats avec le résultats par le dernier opérateur
+                formule_el.value = formule_el.value + eval(chiffre.substring(0,chiffre.length-1));
+            }
+            result_el.textContent = eval(formule_el.value);
+        }
+        
+        
+        function erase(){
+            formule_el.value = "";
+            result_el.textContent = "";
+        }
+
+        function delet() {
+            formule_el.value = formule_el.value.substring(0, formule_el.value.length - 1);
+        }
+    </script>
+</body>
+</html>

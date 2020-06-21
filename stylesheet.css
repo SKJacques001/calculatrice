@@ -1,0 +1,113 @@
+body {
+	background-image: url("photo.jpg");
+	background-size: cover;
+}
+#background
+{
+	display: block;
+	width: 376px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+#reponse {
+	display: block;
+	width: 100%;
+	height: 239px;
+	background: #00BCE6;
+}
+#block1
+{
+	display: table;
+	width: 376px;
+	height: 88px;
+}
+#formule, #result
+{
+	display: block;
+	width: 98%;
+	height: 50%;
+	text-align: right;
+	background-color: #00BCE6;
+	color: white;
+	font-weight: bolder;
+	font-size: xx-large;
+	border: solid 1px #00BCE6;
+}
+#carro
+{
+	display: table-cell;
+	width: 94px;
+	height: 86px;
+	background: #FFFFFF;
+	border: 1px solid #F5F3F3;
+	text-align: center;
+	font-size: medium;
+	font-weight: bold;
+}
+button
+{
+	display: table-cell;
+	width: 100%;
+	height: 86px;
+	background: #FFFFFF;
+	border: 1px solid #F5F3F3;
+	text-align: center;
+	font-size: medium;
+	font-weight: bold;
+}
+#carro1, .carro1
+{
+	display: inline-block;
+	width: 188px;
+	height: 86px;
+	background: #FFFFFF;
+	border: 1px solid #F5F3F3;
+	text-align: center;	
+	font-size: medium;
+	font-weight: bold;
+}
+#block2{
+	width: 100%;
+	display: table;
+}
+#carro4
+{
+	display: table-cell;
+	width: 94px;
+	height: 86px;
+	background: #FFFFFF;
+	border: 1px solid #F5F3F3;
+	text-align: center;
+	font-size: medium;
+	font-weight: bold;
+}
+#left{
+	display: table-cell;
+	font-size: medium;
+	font-weight: bold;
+	width: 75%;
+}
+#rigth
+{
+	display: table-cell;
+	background: rgb(0, 189, 85);
+	width: 25%;
+	height: 174px;
+	vertical-align: top;
+	font-size: medium;
+	font-weight: bold;
+}
+.rigth, carro3{
+	display: inline-block;
+	background: rgb(0, 189, 85);
+	width: 94px;
+	height: 176px;
+	vertical-align: top;
+	font-size: medium;
+	font-weight: bold;
+}
+#end {
+	display: table;
+	width: 100%;
+}
